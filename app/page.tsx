@@ -86,6 +86,7 @@ const Navbar = () => {
         <ThreeDMarquee images={images} />
       </div>{" "}
       <BentoSection />
+      <div className="h-12"></div>
       <ContactSection />
     </>
   );
