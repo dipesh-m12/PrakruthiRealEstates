@@ -1,103 +1,94 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { Switch } from "@/components/ui/switch";
+import { ThreeDMarquee } from "@/components/ui/3d-marquee";
+import ContactSection from "@/components/ContactSection";
+import BentoSection from "@/components/BentoSection";
+const Navbar = () => {
+  const [language, setLanguage] = useState<"en" | "te">("en");
+  const images = [
+    "https://assets.aceternity.com/cloudinary_bkp/3d-card.png",
+    "https://assets.aceternity.com/animated-modal.png",
+    "https://assets.aceternity.com/animated-testimonials.webp",
+    "https://assets.aceternity.com/cloudinary_bkp/Tooltip_luwy44.png",
+    "https://assets.aceternity.com/github-globe.png",
+    "https://assets.aceternity.com/glare-card.png",
+    "https://assets.aceternity.com/layout-grid.png",
+    "https://assets.aceternity.com/flip-text.png",
+    "https://assets.aceternity.com/hero-highlight.png",
+    "https://assets.aceternity.com/carousel.webp",
+    "https://assets.aceternity.com/placeholders-and-vanish-input.png",
+    "https://assets.aceternity.com/shooting-stars-and-stars-background.png",
+    "https://assets.aceternity.com/signup-form.png",
+    "https://assets.aceternity.com/cloudinary_bkp/stars_sxle3d.png",
+    "https://assets.aceternity.com/spotlight-new.webp",
+    "https://assets.aceternity.com/cloudinary_bkp/Spotlight_ar5jpr.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Parallax_Scroll_pzlatw_anfkh7.png",
+    "https://assets.aceternity.com/tabs.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Tracing_Beam_npujte.png",
+    "https://assets.aceternity.com/cloudinary_bkp/typewriter-effect.png",
+    "https://assets.aceternity.com/glowing-effect.webp",
+    "https://assets.aceternity.com/hover-border-gradient.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Infinite_Moving_Cards_evhzur.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Lamp_hlq3ln.png",
+    "https://assets.aceternity.com/macbook-scroll.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Meteors_fye3ys.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Moving_Border_yn78lv.png",
+    "https://assets.aceternity.com/multi-step-loader.png",
+    "https://assets.aceternity.com/vortex.png",
+    "https://assets.aceternity.com/wobble-card.png",
+    "https://assets.aceternity.com/world-map.webp",
+  ];
+  const handleLanguageChange = (checked: boolean) => {
+    setLanguage(checked ? "te" : "en");
+  };
 
-export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <>
+      <nav className="bg-beige-100 text-gray-800 py-4 px-4 sm:px-6 border-b border-green-200 shadow-sm">
+        {/* Language Toggle Section (Above, Right-Aligned) */}
+        <div className="flex justify-end mb-2 sm:mb-3">
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <span className="text-xs sm:text-sm font-medium text-gray-700">
+              English
+            </span>
+            <Switch
+              checked={language === "te"}
+              onCheckedChange={handleLanguageChange}
+              className="data-[state=checked]:bg-green-600"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <span className="text-xs sm:text-sm font-medium text-gray-700">
+              తెలుగు
+            </span>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Logo Section (Below, Left-Aligned) */}
+        <div className="flex justify-start items-center">
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Image
+              src="/logo.png" // Replace with your logo path
+              alt="Prakruti Real Estates Logo"
+              width={40}
+              height={40}
+              className="mr-2 sm:mr-3"
+            />
+          </Link>
+          <h1 className="text-lg sm:text-xl md:text-2xl font-serif font-semibold tracking-tight text-green-800">
+            Prakruti Real Estates
+          </h1>
+        </div>
+      </nav>
+      <div className="mx-auto my-10 max-w-7xl rounded-3xl bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
+        <ThreeDMarquee images={images} />
+      </div>{" "}
+      <BentoSection />
+      <ContactSection />
+    </>
   );
-}
+};
+
+export default Navbar;
