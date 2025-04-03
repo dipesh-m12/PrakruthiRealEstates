@@ -7,8 +7,13 @@ import { Switch } from "@/components/ui/switch";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 import ContactSection from "@/components/ContactSection";
 import BentoSection from "@/components/BentoSection";
+
 const Navbar = () => {
   const [language, setLanguage] = useState<"en" | "te">("en");
+  const translations = {
+    en: "Prakruti Real Estates",
+    te: "ప్రకృతి రియల్ ఎస్టేట్స్",
+  };
   const images = [
     "https://assets.aceternity.com/cloudinary_bkp/3d-card.png",
     "https://assets.aceternity.com/animated-modal.png",
@@ -42,6 +47,7 @@ const Navbar = () => {
     "https://assets.aceternity.com/wobble-card.png",
     "https://assets.aceternity.com/world-map.webp",
   ];
+
   const handleLanguageChange = (checked: boolean) => {
     setLanguage(checked ? "te" : "en");
   };
@@ -49,7 +55,6 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-beige-100 text-gray-800 py-4 px-4 sm:px-6 border-b border-green-200 shadow-sm">
-        {/* Language Toggle Section (Above, Right-Aligned) */}
         <div className="flex justify-end mb-2 sm:mb-3">
           <div className="flex items-center space-x-2 sm:space-x-4">
             <span className="text-xs sm:text-sm font-medium text-gray-700">
@@ -65,12 +70,10 @@ const Navbar = () => {
             </span>
           </div>
         </div>
-
-        {/* Logo Section (Below, Left-Aligned) */}
         <div className="flex justify-start items-center">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Image
-              src="/logo.png" // Replace with your logo path
+              src="/logo.png"
               alt="Prakruti Real Estates Logo"
               width={40}
               height={40}
@@ -78,16 +81,16 @@ const Navbar = () => {
             />
           </Link>
           <h1 className="text-lg sm:text-xl md:text-2xl font-serif font-semibold tracking-tight text-green-800">
-            Prakruti Real Estates
+            {translations[language]}
           </h1>
         </div>
       </nav>
       <div className="mx-auto my-10 max-w-7xl rounded-3xl bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
         <ThreeDMarquee images={images} />
-      </div>{" "}
-      <BentoSection />
+      </div>
+      <BentoSection language={language} />
       <div className="h-12"></div>
-      <ContactSection />
+      <ContactSection language={language} />
     </>
   );
 };
