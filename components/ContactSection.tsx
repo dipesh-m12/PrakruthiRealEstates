@@ -4,8 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-const ContactSection = ({ language }) => {
-  const translations = {
+const ContactSection = ({ language }: any) => {
+  const translations: any = {
     getInTouchTitle: { en: "Get in Touch", te: "సంప్రదించండి" },
     phoneLabel: { en: "Phone", te: "ఫోన్" },
     whatsappLabel: { en: "WhatsApp", te: "వాట్సాప్" },
