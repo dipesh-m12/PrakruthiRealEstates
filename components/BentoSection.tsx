@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
-const BentoSection = ({ language }) => {
+const BentoSection = ({ language }: any) => {
   const translations = {
     nearestPlacesTitle: {
       en: "NEAREST PLACES TO OUR VENTURE",
