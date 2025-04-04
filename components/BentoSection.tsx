@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
 const BentoSection = ({ language }: any) => {
-  const translations = {
+  const translations: any = {
     nearestPlacesTitle: {
       en: "NEAREST PLACES TO OUR VENTURE",
       te: "మా వెంచర్‌కు సమీప ప్రదేశాలు",
@@ -99,17 +99,19 @@ const BentoSection = ({ language }: any) => {
           </CardHeader>
           <CardContent className="p-4 overflow-y-auto h-[calc(100%-60px)]">
             <ul className="space-y-2">
-              {translations.nearestPlaces[language].map((place, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <Check
-                    size={16}
-                    className="text-green-600 mt-1 flex-shrink-0"
-                  />
-                  <span className="text-gray-800 text-sm sm:text-base">
-                    {place}
-                  </span>
-                </li>
-              ))}
+              {translations.nearestPlaces[language].map(
+                (place: any, index: any) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <Check
+                      size={16}
+                      className="text-green-600 mt-1 flex-shrink-0"
+                    />
+                    <span className="text-gray-800 text-sm sm:text-base">
+                      {place}
+                    </span>
+                  </li>
+                )
+              )}
             </ul>
           </CardContent>
         </Card>
@@ -121,21 +123,23 @@ const BentoSection = ({ language }: any) => {
           </CardHeader>
           <CardContent className="p-4 overflow-y-auto h-[calc(100%-60px)]">
             <ul className="space-y-3">
-              {translations.upcomingProjects[language].map((project, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <div className="text-purple-700 mt-1 flex-shrink-0">➺</div>
-                  <div>
-                    <span className="text-gray-800 text-sm sm:text-base">
-                      {project.title}
-                    </span>
-                    {project.extra && (
-                      <div className="text-xs text-gray-600 mt-0.5">
-                        {project.extra}
-                      </div>
-                    )}
-                  </div>
-                </li>
-              ))}
+              {translations.upcomingProjects[language].map(
+                (project: any, index: any) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <div className="text-purple-700 mt-1 flex-shrink-0">➺</div>
+                    <div>
+                      <span className="text-gray-800 text-sm sm:text-base">
+                        {project.title}
+                      </span>
+                      {project.extra && (
+                        <div className="text-xs text-gray-600 mt-0.5">
+                          {project.extra}
+                        </div>
+                      )}
+                    </div>
+                  </li>
+                )
+              )}
             </ul>
           </CardContent>
         </Card>
