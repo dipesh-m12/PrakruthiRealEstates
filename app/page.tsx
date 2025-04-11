@@ -126,7 +126,7 @@ const Navbar = () => {
           alt="bgImage"
           width={200}
           height={100}
-          className="w-full absolute opacity-50 h-[70vh] sm:h-[90vh]"
+          className="w-full absolute opacity-50 h-[60vh] sm:h-[90vh]"
         />
         <div className="mx-auto relative my-10 mt-0 max-w-7xl rounded-3xl  p-2 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
           <ThreeDMarquee images={images} />
