@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import Image from "next/image";
 
 const BentoSection = ({ language }: any) => {
   const translations: any = {
@@ -144,20 +145,47 @@ const BentoSection = ({ language }: any) => {
           </CardContent>
         </Card>
         <div className="md:col-span-3 bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center shadow h-full">
-          <div className="text-gray-400 text-sm">Image Placeholder</div>
+          <div className="text-gray-400 text-sm flex flex-col justify-between gap-12 py-4">
+            {" "}
+            <div>
+              <Image
+                src="/plot.png"
+                alt="plot"
+                width={200}
+                height={100}
+                className=" w-[80vw] sm:w-full  h-full block"
+              />
+            </div>
+            <div>
+              <Image
+                src="/bento1.png"
+                alt="plot"
+                width={200}
+                height={100}
+                className="w-full block"
+              />
+            </div>
+          </div>
         </div>
-        <div className="md:col-span-3 grid grid-cols-2 gap-4 h-full">
-          <div className="bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center shadow">
-            <div className="text-gray-400 text-sm">Image 1</div>
-          </div>
-          <div className="bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center shadow">
-            <div className="text-gray-400 text-sm">Image 2</div>
-          </div>
-          <div className="bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center shadow">
-            <div className="text-gray-400 text-sm">Image 3</div>
-          </div>
-          <div className="bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center shadow">
-            <div className="text-gray-400 text-sm">Image 4</div>
+        <div className="md:col-span-3   ">
+          <div className="bg-gray-100 h-full  p-4 border border-gray-200 rounded-lg flex items-center justify-center shadow">
+            <div className="text-gray-400 flex flex-col gap-4 text-sm ">
+              {" "}
+              <Image
+                src="/bento2.jpg"
+                alt="plot"
+                width={200}
+                height={100}
+                className="w-full rounded-2xl"
+              />
+              <Image
+                src="/bento3.jpg"
+                alt="plot"
+                width={200}
+                height={100}
+                className="w-full rounded-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
