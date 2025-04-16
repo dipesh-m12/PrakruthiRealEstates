@@ -90,7 +90,7 @@ const BentoSection = ({ language }: any) => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:h-[500px]">
         <Card className="md:col-span-3 border border-gray-200 bg-white shadow h-full">
           <CardHeader className="bg-red-100 text-red-800 p-3">

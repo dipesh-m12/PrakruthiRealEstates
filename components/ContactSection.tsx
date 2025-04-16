@@ -3,6 +3,7 @@ import { Phone, MessageSquare, Mail, MapPin, Clock } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Threads from "./react-bits/Threads";
 
 const ContactSection = ({ language }: any) => {
   const translations: any = {
@@ -41,7 +42,7 @@ const ContactSection = ({ language }: any) => {
 
   return (
     <div className="font-sans">
-      <div className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-6">
+      <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-6 md:gap-24">
         <Card className="shadow-sm">
           <CardHeader>
             <CardTitle className="text-xl font-bold">
@@ -167,6 +168,9 @@ const ContactSection = ({ language }: any) => {
             </div>
           </div>
         </div>
+        {/* <div style={{ width: "100%", height: "600px", position: "relative" }}>
+          <Threads amplitude={1} distance={0} enableMouseInteraction={true} />
+        </div>{" "} */}
       </footer>
     </div>
   );
