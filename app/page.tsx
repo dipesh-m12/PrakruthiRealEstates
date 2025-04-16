@@ -160,12 +160,12 @@ const Navbar = () => {
             alt="Luxury real estate property"
             width={1200}
             height={800}
-            className="w-[100vw] sm:w-[56vw] object-cover absolute bottom-0 right-0"
+            className="w-[100vw] sm:w-[56vw] object-cover absolute bottom-12  right-0"
             priority
           />
         </div>
         {/* Decorative elements */}
-        <div className="absolute bottom-8 left-6 md:left-12 lg:left-16 z-20 flex items-center sm:space-x-4 space-x-1">
+        <div className="absolute bottom-16 left-6 md:left-12 lg:left-16 z-20 flex items-center sm:space-x-4 space-x-1">
           <div className="flex space-x-1">
             {[...Array(5)].map((_, i) => (
               <svg
