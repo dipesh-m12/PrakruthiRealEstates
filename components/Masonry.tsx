@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTransition, a } from "@react-spring/web";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const images = [
@@ -28,13 +28,6 @@ const images = [
 export default function BentoGridSection() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const transitions = useTransition(selectedImage, {
-    from: { opacity: 0, transform: "scale(0.8)" },
-    enter: { opacity: 1, transform: "scale(1)" },
-    leave: { opacity: 0, transform: "scale(0.8)" },
-    config: { duration: 300 },
-  });
-
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -52,7 +45,7 @@ export default function BentoGridSection() {
             >
               <Image
                 src={src}
-                alt={`Property ${index + 1}`}
+                alt={`Luxury property ${index + 1} in Hyderabad`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
@@ -63,17 +56,20 @@ export default function BentoGridSection() {
         </div>
       </div>
 
-      {transitions((style, item) =>
-        item ? (
-          <a.div
-            style={style}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setSelectedImage(null)}
           >
             <div className="relative max-w-4xl w-full mx-4">
               <Image
-                src={item}
-                alt="Selected Property"
+                src={selectedImage}
+                alt="Selected luxury property in Hyderabad"
                 width={1200}
                 height={800}
                 className="object-contain rounded-lg"
@@ -86,9 +82,9 @@ export default function BentoGridSection() {
                 ✕
               </button>
             </div>
-          </a.div>
-        ) : null
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
