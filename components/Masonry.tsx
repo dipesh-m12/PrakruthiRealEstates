@@ -9,20 +9,11 @@ const images = [
   "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737919/h4_pexo53.jpg",
   "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737863/h5_krcqax.jpg",
   "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737862/h6_ghj4cx.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737862/h7_ymdh2h.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737885/h8_nsdorp.jpg",
   "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737948/h9_rbuzgw.jpg",
   "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737884/h10_zko047.jpg",
   "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737902/h11_mk2zfm.jpg",
   "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737944/h12_pgecoy.jpg",
   "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737894/h13_f19kos.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737897/h14_g4ar8q.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737909/h15_awzkbz.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737912/h16_oufpoy.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737922/h17_uojhcg.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737954/h18_rrgcjc.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737923/h19_kkjkzk.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737938/h20_yjmytj.jpg",
 ];
 
 export default function BentoGridSection() {
