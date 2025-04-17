@@ -232,7 +232,7 @@ const Navbar = () => {
       <div ref={contRef}>
         <ContactSection language={language} />
       </div>
-      <SplashCursor />
+      {/* <SplashCursor /> */}
     </>
   );
 };

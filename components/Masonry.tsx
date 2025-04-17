@@ -1,81 +1,89 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
 import Image from "next/image";
 
-const images = [
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737877/h1_aynlvs.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737858/h2_wyrghd.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737866/h3_ovvtza.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737919/h4_pexo53.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737863/h5_krcqax.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737862/h6_ghj4cx.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737948/h9_rbuzgw.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737884/h10_zko047.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737902/h11_mk2zfm.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737944/h12_pgecoy.jpg",
-  "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737894/h13_f19kos.jpg",
-];
+function Masonry() {
+  const images = [
+    "/plot.png",
+    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737877/h1_aynlvs.jpg",
+    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737858/h2_wyrghd.jpg",
+    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737866/h3_ovvtza.jpg",
+  ];
 
-export default function BentoGridSection() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 auto-rows-[200px]">
-          {images.map((src, index) => (
-            <div
-              key={src}
-              className={`
-                relative overflow-hidden rounded-lg cursor-pointer
-                ${index % 8 === 0 ? "col-span-2 row-span-2" : ""}
-                ${index % 8 === 3 ? "col-span-2" : ""}
-                ${index % 8 === 5 ? "row-span-2" : ""}
-              `}
-              onClick={() => setSelectedImage(src)}
-            >
-              <Image
-                src={src}
-                alt={`Luxury property ${index + 1} in Hyderabad`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-                priority={index < 5}
-              />
-            </div>
-          ))}
+      <div className="w-full px-4 py-12 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-4">
+          {/* Empty space on the left */}
+          <div className="md:w-1/6"></div>
+
+          {/* First column - wider, contains plot.png */}
+          <div
+            className="md:w-2/3 h-96 md:h-auto relative cursor-pointer"
+            onClick={() => setSelectedImage(images[0])}
+          >
+            <Image
+              src={images[0]}
+              alt="Plot visualization"
+              fill
+              className="object-contain rounded-lg w-fit"
+              priority
+            />
+          </div>
+
+          {/* Second column - narrower, contains 3 stacked images */}
+          <div className="md:w-1/3 flex flex-col gap-4">
+            {images.slice(1).map((img, index) => (
+              <div
+                key={index}
+                className="h-40 relative cursor-pointer"
+                onClick={() => setSelectedImage(img)}
+              >
+                <Image
+                  src={img}
+                  alt={`Image ${index + 1}`}
+                  fill
+                  className="object-cover rounded-lg"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Empty space on the right */}
+          <div className="md:w-1/6"></div>
         </div>
       </div>
 
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className="relative max-w-4xl w-full mx-4">
-              <Image
-                src={selectedImage}
-                alt="Selected luxury property in Hyderabad"
-                width={1200}
-                height={800}
-                className="object-contain rounded-lg"
-                sizes="100vw"
-              />
-              <button
-                className="absolute top-2 right-2 bg-white text-black rounded-full p-2 font-poppins"
-                onClick={() => setSelectedImage(null)}
-              >
-                ✕
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl w-full mx-4">
+            <Image
+              src={selectedImage}
+              alt="Selected image"
+              width={1200}
+              height={800}
+              className="object-contain h-[80vh] rounded-lg"
+            />
+            <button
+              className="absolute top-2 right-2 bg-white text-black rounded-full p-2 font-bold"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
+
+export default Masonry;

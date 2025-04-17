@@ -149,11 +149,11 @@ const BentoSection = ({ language }: any) => {
             {" "}
             <div>
               <Image
-                src="/plot.png"
+                src="https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737919/h4_pexo53.jpg"
                 alt="plot"
                 width={200}
                 height={100}
-                className=" w-[80vw] sm:w-full  h-full block"
+                className=" w-[80vw] sm:w-full  h-full block rounded-4xl p-2"
               />
             </div>
             <div>
