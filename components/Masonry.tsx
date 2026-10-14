@@ -3,10 +3,10 @@ import Image from "next/image";
 
 function Masonry() {
   const images = [
-    "/plot.png",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737877/h1_aynlvs.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737858/h2_wyrghd.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737866/h3_ovvtza.jpg",
+    "/optimized/plot.webp",
+    "/optimized/images/h1.webp",
+    "/optimized/images/h2.webp",
+    "/optimized/images/h3.webp",
   ];
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -18,7 +18,7 @@ function Masonry() {
           {/* Empty space on the left */}
           <div className="md:w-1/6"></div>
 
-          {/* First column - wider, contains plot.png */}
+          {/* First column - wider, contains the plot layout */}
           <div
             className="md:w-2/3 h-96 md:h-auto relative cursor-pointer"
             onClick={() => setSelectedImage(images[0])}
@@ -28,7 +28,7 @@ function Masonry() {
               alt="Plot visualization"
               fill
               className="object-contain rounded-lg w-fit"
-              priority
+              sizes="(max-width: 768px) 100vw, 640px"
             />
           </div>
 
@@ -44,6 +44,7 @@ function Masonry() {
                   src={img}
                   alt={`Image ${index + 1}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 320px"
                   className="object-cover rounded-lg"
                   loading="lazy"
                 />
@@ -68,6 +69,7 @@ function Masonry() {
               alt="Selected image"
               width={1200}
               height={800}
+              sizes="(max-width: 896px) 100vw, 896px"
               className="object-contain h-[80vh] rounded-lg"
             />
             <button

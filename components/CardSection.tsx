@@ -25,7 +25,7 @@ function CardSection({ language }: CardSectionProps) {
       },
       name: "Anjali Sharma",
       designation: "Homeowner, Prakruti Greenfields",
-      src: "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737877/h1_aynlvs.jpg",
+      src: "/optimized/images/h1.webp",
     },
     {
       quote: {
@@ -34,7 +34,7 @@ function CardSection({ language }: CardSectionProps) {
       },
       name: "Ravi Kumar",
       designation: "IT Professional",
-      src: "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737894/h13_f19kos.jpg",
+      src: "/optimized/images/h13.webp",
     },
     {
       quote: {
@@ -43,7 +43,7 @@ function CardSection({ language }: CardSectionProps) {
       },
       name: "Priya Reddy",
       designation: "Entrepreneur",
-      src: "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737919/h4_pexo53.jpg",
+      src: "/optimized/images/h4.webp",
     },
     {
       quote: {
@@ -52,7 +52,7 @@ function CardSection({ language }: CardSectionProps) {
       },
       name: "Suresh Naidu",
       designation: "Retired Banker",
-      src: "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737948/h9_rbuzgw.jpg",
+      src: "/optimized/images/h9.webp",
     },
     {
       quote: {
@@ -61,7 +61,7 @@ function CardSection({ language }: CardSectionProps) {
       },
       name: "Meena Patel",
       designation: "Environmental Consultant",
-      src: "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737862/h7_ymdh2h.jpg",
+      src: "/optimized/images/h7.webp",
     },
   ];
 

@@ -46,37 +46,37 @@ const Navbar = () => {
   };
 
   const images = [
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737877/h1_aynlvs.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737858/h2_wyrghd.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737866/h3_ovvtza.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737919/h4_pexo53.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737863/h5_krcqax.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737862/h6_ghj4cx.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737862/h7_ymdh2h.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737885/h8_nsdorp.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737948/h9_rbuzgw.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737884/h10_zko047.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737902/h11_mk2zfm.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737944/h12_pgecoy.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737894/h13_f19kos.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737897/h14_g4ar8q.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737909/h15_awzkbz.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737912/h16_oufpoy.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737922/h17_uojhcg.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737954/h18_rrgcjc.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737923/h19_kkjkzk.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737938/h20_yjmytj.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737942/h21_yzg4zn.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737941/h22_hu7ef2.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737954/h23_a0w1ub.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737909/h15_awzkbz.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737912/h16_oufpoy.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737922/h17_uojhcg.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737954/h18_rrgcjc.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737884/h10_zko047.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737902/h11_mk2zfm.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737902/h11_mk2zfm.jpg",
-    "https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737944/h12_pgecoy.jpg",
+    "/optimized/images/h1.webp",
+    "/optimized/images/h2.webp",
+    "/optimized/images/h3.webp",
+    "/optimized/images/h4.webp",
+    "/optimized/images/h5.webp",
+    "/optimized/images/h6.webp",
+    "/optimized/images/h7.webp",
+    "/optimized/images/h8.webp",
+    "/optimized/images/h9.webp",
+    "/optimized/images/h10.webp",
+    "/optimized/images/h11.webp",
+    "/optimized/images/h12.webp",
+    "/optimized/images/h13.webp",
+    "/optimized/images/h14.webp",
+    "/optimized/images/h15.webp",
+    "/optimized/images/h16.webp",
+    "/optimized/images/h17.webp",
+    "/optimized/images/h18.webp",
+    "/optimized/images/h19.webp",
+    "/optimized/images/h20.webp",
+    "/optimized/images/h21.webp",
+    "/optimized/images/h22.webp",
+    "/optimized/images/h23.webp",
+    "/optimized/images/h15.webp",
+    "/optimized/images/h16.webp",
+    "/optimized/images/h17.webp",
+    "/optimized/images/h18.webp",
+    "/optimized/images/h10.webp",
+    "/optimized/images/h11.webp",
+    "/optimized/images/h11.webp",
+    "/optimized/images/h12.webp",
   ];
 
   const handleLanguageChange = (checked: boolean) => {
@@ -104,10 +104,11 @@ const Navbar = () => {
         <div className="flex justify-start items-center">
           <Link href="/" className="hover:opacity-80 transition-opacity">
             <Image
-              src="/logo.png"
+              src="/optimized/logo.webp"
               alt="Prakruti Real Estates Logo"
               width={40}
               height={40}
+              sizes="40px"
               className="mr-2 sm:mr-3"
             />
           </Link>
@@ -156,10 +157,11 @@ const Navbar = () => {
         <div className="basis-2/3 md:basis-3/5">
           <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-white via-white/90 to-transparent z-[1] h-1/3 sm:h-full w-full md:w-1/2 pointer-events-none" />
           <Image
-            src="/images/mainImage.png"
+            src="/optimized/images/mainImage.webp"
             alt="Luxury real estate property"
             width={1200}
             height={800}
+            sizes="(max-width: 640px) 100vw, 56vw"
             className="w-[100vw] sm:w-[56vw] object-cover absolute bottom-12  right-0"
             priority
           />
@@ -187,11 +189,11 @@ const Navbar = () => {
       {/* Card section */}
       <div className="flex items-center relative">
         <Image
-          src={"/images/yellowBg.jpg"}
-          width={200}
-          height={200}
+          src={"/optimized/images/yellowBg.webp"}
+          fill
+          sizes="100vw"
           alt="bg"
-          className="w-full absolute h-[120vh] sm:h-[70vh]"
+          className="object-cover"
         />
         <CardSection language={language} />
       </div>

@@ -149,19 +149,21 @@ const BentoSection = ({ language }: any) => {
             {" "}
             <div>
               <Image
-                src="https://res.cloudinary.com/dp7wm24gz/image/upload/v1744737919/h4_pexo53.jpg"
+                src="/optimized/images/h4.webp"
                 alt="plot"
                 width={200}
                 height={100}
+                sizes="(max-width: 768px) 80vw, 300px"
                 className=" w-[80vw] sm:w-full  h-full block rounded-4xl p-2"
               />
             </div>
             <div>
               <Image
-                src="/bento1.png"
+                src="/optimized/bento1.webp"
                 alt="plot"
                 width={200}
                 height={100}
+                sizes="(max-width: 768px) 100vw, 300px"
                 className="w-full block"
               />
             </div>
@@ -172,17 +174,19 @@ const BentoSection = ({ language }: any) => {
             <div className="text-gray-400 flex flex-col gap-4 text-sm ">
               {" "}
               <Image
-                src="/bento2.jpg"
+                src="/optimized/bento2.webp"
                 alt="plot"
                 width={200}
                 height={100}
+                sizes="(max-width: 768px) 100vw, 300px"
                 className="w-full rounded-2xl"
               />
               <Image
-                src="/bento3.jpg"
+                src="/optimized/bento3.webp"
                 alt="plot"
                 width={200}
                 height={100}
+                sizes="(max-width: 768px) 100vw, 300px"
                 className="w-full rounded-2xl"
               />
             </div>
